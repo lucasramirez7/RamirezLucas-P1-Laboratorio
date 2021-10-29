@@ -127,7 +127,7 @@ int showTravels(sTravel travels[], int size, sDestiny destinies[], int destinySi
     int flag = 1;
     if (travels != NULL && size > 0 && destinies != NULL && destinySize > 0){
 
-        puts("********LISTA DE MICROS********\n");
+        puts("********LISTA DE VIAJES********\n");
         puts("---------------------------------------------------------------");
         puts("   ID    ID MICRO      DESTINO            PRECIO        ");
         puts("----------------------------------------------------------------");

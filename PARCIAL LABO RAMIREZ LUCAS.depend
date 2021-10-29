@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1635537461 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\buses.c
+1635537660 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\buses.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -12,7 +12,7 @@
 	"kind.h"
 	"company.h"
 
-1635529549 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\main.c
+1635539443 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\main.c
 	<stdio.h>
 	<stdlib.h>
 	"buses.h"
@@ -61,7 +61,7 @@
 
 1635465691 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\date.c
 
-1635527805 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\travel.c
+1635539465 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\travel.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

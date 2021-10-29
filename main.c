@@ -12,6 +12,8 @@
 #define COMPANY_SIZE 4
 #define DESTINY_SIZE 4
 #define TRAVEL_SIZE 50
+#define FALSE 0
+#define TRUE 1
 int main(){
 
     sBus buses[SIZE];
@@ -19,6 +21,7 @@ int main(){
     char follow = 's';
     int nextId = 100;
     int nextIdTravel = 20000;
+    int flag = FALSE;
 
 
     if (!setUpBus(buses,SIZE)){
@@ -34,25 +37,48 @@ int main(){
     sKind types[KIND_SIZE] = {{5000,"Comun"},{5001,"Coche Cama"},{5002,"Doble"},{5003,"Vip"}};
     sDestiny destinies[DESTINY_SIZE] = {{20000,"calafate",22250},{20001,"Bariloche",103000},{20002,"Iguazu",84400},{20003,"Mendoza",95600}};
 
-    busesHardcore(buses,SIZE,9,&nextId);
-    travelHardcore(travels,SIZE,9,&nextIdTravel);
+    //busesHardcore(buses,SIZE,9,&nextId);
+    //travelHardcore(travels,SIZE,9,&nextIdTravel);
 
     do{
     switch (menu()){
 
     case 'a':
     system("cls");
-    registerBus(buses,SIZE, &nextId,types,KIND_SIZE,companies,COMPANY_SIZE);
-    break;
-
+       if(!registerBus(buses,SIZE, &nextId,types,KIND_SIZE,companies,COMPANY_SIZE)){
+                    printf("\nNo se pudo realizar el alta.\n");
+                }
+                else
+                {
+                    printf("\nAlta exitosa!!\n");
+                    flag = TRUE;
+                }
+                break;
     case 'b':
     system("cls");
-    modifyBus(buses,SIZE,types,KIND_SIZE,companies,COMPANY_SIZE);
-    break;
+      if(!modifyBus(buses,SIZE,types,KIND_SIZE,companies,COMPANY_SIZE)){
+
+                    printf("\nNo se pudo realizar la modificacion.\n");
+                }
+                else
+                {
+                    printf("Modificación exitosa!!\n");
+                    flag = TRUE;
+                }
+
+                break;
 
     case 'c':
     system("cls");
-    removeBuses(buses,SIZE,types,KIND_SIZE,companies,COMPANY_SIZE);
+      if(!removeBuses(buses,SIZE,types,KIND_SIZE,companies,COMPANY_SIZE)){
+
+                    printf("\nNo se pudo realizar la baja.\n");
+                }
+                else
+                {
+                    printf("Baja exitosa!!\n");
+                    flag = TRUE;
+                }
     break;
 
     case 'd':
@@ -78,7 +104,18 @@ int main(){
 
     case 'h':
     system("cls");
-    registerTravel(travels,TRAVEL_SIZE,&nextIdTravel,buses,SIZE,destinies,DESTINY_SIZE);
+    if(flag == FALSE){
+                printf("\nNo se puede dar de alta un viaje sin un micro \n");
+                }
+                else
+                {
+                    if(!registerTravel(travels,TRAVEL_SIZE,&nextIdTravel,buses,SIZE,destinies,DESTINY_SIZE)){
+                        printf("\nNo se pudo realizar la baja.\n");
+                    }
+                    else{
+                        printf("Baja exitosa!!\n");
+                    }
+                }
     break;
 
     case 'i':

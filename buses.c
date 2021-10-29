@@ -26,10 +26,7 @@ char menu(){
     fflush(stdin);
     scanf("%c", &opcion);
     opcion = tolower(opcion);
-
-
     return opcion;
-
 }
 int setUpBus(sBus buses[], int size){
 
@@ -346,7 +343,6 @@ int orderTravellerAndCompany(sBus buses[], int size , sCompany companies[], int 
 
     return ok;
 }
-
 char validateChar(char value, char a, char b){
       return (value == a || value == b);
 }
