@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="PARCIAL LABO RAMIREZ LUCAS" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/PARCIAL LABO RAMIREZ LUCAS" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/PARCIAL LABO RAMIREZ LUCAS" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="buses.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="buses.h" />
+		<Unit filename="company.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="company.h" />
+		<Unit filename="dataWarehouse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="dataWarehouse.h" />
+		<Unit filename="date.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="date.h" />
+		<Unit filename="destiny.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="destiny.h" />
+		<Unit filename="kind.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kind.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="travel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="travel.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

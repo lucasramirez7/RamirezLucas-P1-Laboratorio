@@ -1,0 +1,81 @@
+# depslib dependency file v1.0
+1635529549 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\buses.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"buses.h"
+	"kind.h"
+	"company.h"
+
+1635529312 c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\buses.h
+	"kind.h"
+	"company.h"
+
+1635529549 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"buses.h"
+	"kind.h"
+	"company.h"
+	"destiny.h"
+	"travel.h"
+	"date.h"
+	"dataWarehouse.h"
+
+1635360779 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\kind.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"kind.h"
+
+1635360580 c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\kind.h
+
+1635362770 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\company.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"company.h"
+
+1635464623 c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\company.h
+
+1635482389 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\destiny.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"destiny.h"
+
+1635482136 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\datawarehouse.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"dataWarehouse.h"
+	"buses.h"
+	"travel.h"
+
+1635476513 c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\datawarehouse.h
+	"buses.h"
+	"travel.h"
+
+1635482389 c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\destiny.h
+
+1635465691 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\date.c
+
+1635527805 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\travel.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"travel.h"
+	"buses.h"
+	"destiny.h"
+	"company.h"
+	"kind.h"
+
+1635480115 c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\travel.h
+	"buses.h"
+	"destiny.h"
+	"date.h"
+
+1635465807 c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\date.h
+
