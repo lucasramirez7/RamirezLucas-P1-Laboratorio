@@ -11,7 +11,7 @@ char menu(){
     char opcion;
 
     system("cls");
-    printf("********** GESTIONAR EMPLEADOS ********** \n \n");
+    printf("********** GESTIONAR EMPRESA DE VIAJES ********** \n \n");
     puts("A- Alta Micro");
     puts("B- Modificar Micro");
     puts("C- Baja Micro");

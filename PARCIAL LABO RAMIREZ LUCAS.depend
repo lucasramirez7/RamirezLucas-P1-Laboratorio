@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1635529549 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\buses.c
+1635537461 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\buses.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
