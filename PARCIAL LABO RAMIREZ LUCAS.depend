@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1635537660 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\buses.c
+1635553949 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\buses.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -7,12 +7,14 @@
 	"buses.h"
 	"kind.h"
 	"company.h"
+	"driver.h"
 
-1635529312 c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\buses.h
+1635553450 c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\buses.h
 	"kind.h"
 	"company.h"
+	"driver.h"
 
-1635539443 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\main.c
+1635553746 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\main.c
 	<stdio.h>
 	<stdlib.h>
 	"buses.h"
@@ -21,6 +23,7 @@
 	"destiny.h"
 	"travel.h"
 	"date.h"
+	"driver.h"
 	"dataWarehouse.h"
 
 1635360779 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\kind.c
@@ -31,7 +34,7 @@
 
 1635360580 c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\kind.h
 
-1635362770 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\company.c
+1635544558 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\company.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -45,7 +48,7 @@
 	<string.h>
 	"destiny.h"
 
-1635482136 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\datawarehouse.c
+1635548139 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\datawarehouse.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -61,7 +64,7 @@
 
 1635465691 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\date.c
 
-1635539465 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\travel.c
+1635550070 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\travel.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -72,10 +75,19 @@
 	"company.h"
 	"kind.h"
 
-1635480115 c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\travel.h
+1635547871 c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\travel.h
 	"buses.h"
 	"destiny.h"
 	"date.h"
+	"driver.h"
 
 1635465807 c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\date.h
+
+1635546940 source:c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\driver.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"driver.h"
+
+1635545443 c:\users\lucas\desktop\trabajos practicos c\parcial labo ramirez lucas\driver.h
 

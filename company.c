@@ -57,3 +57,4 @@ int validateCompanyId(sCompany companies[], int id, int size){
     }
     return ok;
 }
+

@@ -42,8 +42,7 @@ int registerTravel(sTravel travels[] ,int size ,int* pId ,sBus buses[] ,int buse
     int ok = 0;
     int index;
     int cant;
-    sCompany companies[COMPANY_SIZE];
-    sKind types[DESTINY_SIZE];
+
 
 
     sTravel auxTravel;
@@ -88,7 +87,7 @@ int registerTravel(sTravel travels[] ,int size ,int* pId ,sBus buses[] ,int buse
                   }
 
             system("cls");
-            showBuses(buses,busesSize,types,KIND_SIZE,companies,COMPANY_SIZE);
+
             puts("Ingrese el ID del micro: ");
             scanf("%d", &auxTravel.idBus);
             puts("----------------------------------------------- \n");

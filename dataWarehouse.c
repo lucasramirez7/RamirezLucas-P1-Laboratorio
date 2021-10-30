@@ -9,11 +9,17 @@ int types[10] = {5000,5000,5001,5002,5000,5003,5002,5001,5003,5002};
 
 int companies[10] = {1001,1002,1003,1001,1000,1002,1000,1001,1003,1002};
 
+int drivers [10]={50002,50001,50002,50003,50003,50001,50000,50002,50003,50003};
+
 int traveller[10] = {17,45,30,24,43,12,17,19,36,10};
 
 int idBus[10]={100,105,108,103,104,102,103,102,109,109};
 
 int idDestinies[10]={20002,20001,20002,20003,20003,20001,20000,20002,20003,20003};
+
+
+
+
 
 sDate dates[10]=  {
                    {26,06,2022},
@@ -54,6 +60,7 @@ int busesHardcore(sBus buses[], int size, int amount, int* pId){
             buses[i].traveller = traveller[i];
             buses[i].idCompany = companies[i];
             buses[i].idKind = types[i];
+            buses[i].idDriver = drivers[i];
             buses[i].isEmpty = 0;
             cont++;
         }

@@ -5,6 +5,7 @@
 #include "buses.h"
 #include "kind.h"
 #include "company.h"
+#include "driver.h"
 
 char menu(){
 
@@ -21,6 +22,8 @@ char menu(){
     puts("G- Listar Destinos");
     puts("H- Alta viaje");
     puts("I- listar viajes");
+    puts("J- listar Choferes");
+    puts("K- INFORMES");
     puts("X- Salir \n");
     printf("INGRESE OPCION: ");
     fflush(stdin);
@@ -54,7 +57,7 @@ int searchFreeBus(sBus buses[], int size){
     }
     return index;
 }
-int registerBus(sBus buses[] ,int size ,int* pId ,sKind types[] ,int kindSize ,sCompany companies[],int companySize){
+int registerBus(sBus buses[] ,int size ,int* pId ,sKind types[] ,int kindSize ,sCompany companies[],int companySize, sDriver drivers[],int driverSize){
 
     int ok = 0;
     int index;
@@ -109,6 +112,16 @@ int registerBus(sBus buses[] ,int size ,int* pId ,sKind types[] ,int kindSize ,s
             scanf("%d", &auxBus.traveller);
             puts("----------------------------------------------- \n");
             }
+            system("cls");
+            showDriver(drivers,driverSize);
+            puts("ingrese ID chofer que desee viajar: ");
+            scanf("%d", &auxBus.idDriver);
+            puts("------------------------------------------------- \n");
+
+            while(!validateInt(auxBus.idDriver,50000,50006)){
+                puts("ID INVALIDO, ingrese ID chofer que desee viajar: ");
+                scanf("%d", &auxBus.idDriver);
+            }
 
             auxBus.isEmpty = 0;
 
@@ -119,40 +132,41 @@ int registerBus(sBus buses[] ,int size ,int* pId ,sKind types[] ,int kindSize ,s
     }
     return ok;
 }
-void showBus(sBus bus, sKind types[], int kindSize, sCompany companies[], int companySize){
+void showBus(sBus bus, sKind types[], int kindSize, sCompany companies[], int companySize, sDriver drivers[], int driverSize){
 
     char kindDescription[20];
     char companyDescription[20];
+    char driverName[20];
 
 
     loadKindDescription(types,kindSize,bus.idKind,kindDescription);
     loadCompanyDescription(companies,companySize,bus.idCompany,companyDescription);
+    loadDriverName(drivers,driverSize,bus.idDriver,driverName);
 
 
-
-     puts("------------------------------------------------------------");
-     printf("  %-8d   %-8d  %-15s   %-10s       \n",
+     puts("--------------------------------------------------------------------------");
+     printf("  %-8d   %-8d  %-15s   %-10s    %-10s    \n",
            bus.id,
            bus.traveller,
            companyDescription,
-           kindDescription
+           kindDescription,
+           driverName
            );
 }
-int showBuses(sBus buses[], int size, sKind types[], int kindSize, sCompany companies[], int companySize){
+int showBuses(sBus buses[], int size, sKind types[], int kindSize, sCompany companies[], int companySize, sDriver drivers[], int driverSize){
 
     int ok = 0;
     int flag = 1;
-    if (buses != NULL && size > 0 && types != NULL && kindSize > 0 && companies != NULL && companySize > 0)
-    {
+    if (buses != NULL && size > 0 && types != NULL && kindSize > 0 && companies != NULL && companySize > 0 && drivers != NULL && driverSize > 0){
 
         puts("********LISTA DE MICROS********\n");
-        puts("---------------------------------------------------------------");
-        puts("   ID    PASAJEROS      EMPRESA          TIPO        ");
-        puts("----------------------------------------------------------------");
+        puts("--------------------------------------------------------------------------");
+        puts("   ID    PASAJEROS      EMPRESA          TIPO           CHOFER      ");
+        puts("--------------------------------------------------------------------------");
 
         for(int i=0; i<size; i++){
             if(!buses[i].isEmpty){
-                showBus(buses[i],types,kindSize,companies,companySize);
+                showBus(buses[i],types,kindSize,companies,companySize,drivers,driverSize);
                 flag = 0;
             }
         }
@@ -190,13 +204,14 @@ int modifyMenu(){
     printf("1- Empresa\n");
     printf("2- Tipo \n");
     printf("3- Cantidad pasajeros\n");
+    printf("4- Chofer");
     printf("10- Salir\n \n");
     printf("INGRESE OPCION: ");
     scanf("%d", &option);
 
     return option;
 }
-int modifyBus(sBus buses[], int size, sKind types[], int kindSize, sCompany companies[], int companySize){
+int modifyBus(sBus buses[], int size, sKind types[], int kindSize, sCompany companies[], int companySize, sDriver drivers[],int driverSize){
 
     int ok = 0;
     int index;
@@ -205,10 +220,10 @@ int modifyBus(sBus buses[], int size, sKind types[], int kindSize, sCompany comp
 
 
 
-    if(buses != NULL && size > 0 && types != NULL && kindSize > 0 && companies != NULL && companySize > 0){
+    if(buses != NULL && size > 0 && types != NULL && kindSize > 0 && companies != NULL && companySize > 0 && drivers != NULL && driverSize > 0){
         system("cls");
         puts(" -----------------MODIFICAR MICRO-----------------\n");
-        showBuses(buses,size,types,kindSize,companies,companySize);
+        showBuses(buses,size,types,kindSize,companies,companySize,drivers,driverSize);
         printf("\n \n Ingrese ID: ");
         scanf("%d", &id);
 
@@ -221,7 +236,7 @@ int modifyBus(sBus buses[], int size, sKind types[], int kindSize, sCompany comp
 
             do{
             system("cls");
-            showBus(buses[index],types,kindSize,companies,companySize);
+            showBus(buses[index],types,kindSize,companies,companySize,drivers,driverSize);
             printf("------------------------------------------------------------\n");
             printf("Confirma Modificacion?(s/n): ");
             fflush(stdin);
@@ -261,6 +276,15 @@ int modifyBus(sBus buses[], int size, sKind types[], int kindSize, sCompany comp
                     ok = 1;
                 break;
 
+                case 4:
+                    system("cls");
+                    puts("Ingrese el nuevo chofer al cual desea cambiar");
+                    showDriver(drivers,driverSize);
+                    printf("Ingrese id: ");
+                    scanf("%d", &buses[index].idDriver);
+                    ok = 1;
+                break;
+
                 case 10:
                     ok = 1;
                 break;
@@ -274,7 +298,7 @@ int modifyBus(sBus buses[], int size, sKind types[], int kindSize, sCompany comp
     }
     return ok;
 }
-int removeBuses(sBus buses[], int size, sKind types[], int kindSize, sCompany companies[], int companySize){
+int removeBuses(sBus buses[], int size, sKind types[], int kindSize, sCompany companies[], int companySize, sDriver drivers[], int driverSize){
 
     int ok = 0;
     int id;
@@ -282,10 +306,10 @@ int removeBuses(sBus buses[], int size, sKind types[], int kindSize, sCompany co
 
 
     char confirm;
-    if(buses != NULL && size > 0 && types != NULL && kindSize > 0 && companies != NULL && companySize > 0){
+    if(buses != NULL && size > 0 && types != NULL && kindSize > 0 && companies != NULL && companySize > 0 && drivers != NULL && driverSize > 0){
         system("cls");
         puts("------------------------BAJA MICROS------------------------\n\n");
-        showBuses(buses,size,types,kindSize,companies,companySize);
+        showBuses(buses,size,types,kindSize,companies,companySize,drivers,driverSize);
         puts("\n");
         printf("Ingrese ID: ");
         scanf("%d", &id);
@@ -297,11 +321,12 @@ int removeBuses(sBus buses[], int size, sKind types[], int kindSize, sCompany co
         else{
             do{
             system("cls");
-            showBus(buses[index],types,kindSize,companies,companySize);
+            showBus(buses[index],types,kindSize,companies,companySize,drivers,driverSize);
             printf("------------------------------------------------------------\n");
             printf("Confirma baja?(s/n): ");
             fflush(stdin);
             scanf("%c", &confirm);
+            confirm = tolower(confirm);
             }while(!validateChar(confirm,'s','n'));
             if(confirm == 's'){
             buses[index].isEmpty = 1;
@@ -341,6 +366,216 @@ int orderTravellerAndCompany(sBus buses[], int size , sCompany companies[], int 
         ok=1;
     }
 
+    return ok;
+}
+int subMenuReports(){
+
+    int option;
+
+    system("cls");
+    puts("********** SELECCIONA EL INFORME ********** \n \n");
+    printf("1- Mostrar micros de la empresa seleccionada por el usuario.\n");
+    printf("2- Mostrar micros de un tipo seleccionado. \n");
+    printf("3- Informar Promedio de micros de tipo Vip sobre el total de micros de una empresa\n");
+    printf("4- Mostrar un listado de los micros separados por empresa. \n");
+    printf("5- Informar la o las empresas que pueden transportar más pasajeros (mayor acumulador de capacidades de sus micros) \n");
+    printf("6- Mostrar la empresa con menor cantidad de micros\n");
+    printf("10- Salir\n \n");
+    printf("INGRESE OPCION: ");
+    scanf("%d", &option);
+
+    return option;
+
+}
+int showBusIdCompany(int companyId, sBus buses[], int size, sKind types[], int kindSize, sCompany companies[], int companySize, sDriver drivers[], int driversSize){
+
+    int ok = 0;
+    int flag = 1;
+
+
+    if (buses != NULL && size > 0 && companies !=NULL && companySize > 0)
+    {
+
+
+        while ( !validateCompanyId(companies,companyId,companySize)){
+            printf("Error, ingrese id de la Empresa: ");
+            scanf("%d", &companyId);
+        }
+
+
+        printf("------------------------------------------------------------\n");
+        printf(" ID       Empresa       Tipo    Pasajeros      Chofer\n");
+        printf("------------------------------------------------------------\n");
+        for (int i = 0; i < size; i++){
+            if (!buses[i].isEmpty && buses[i].idCompany == companyId)
+            {
+                showBus(buses[i],types,kindSize,companies,companySize,drivers,driversSize);
+                flag = 0;
+            }
+        }
+        if (flag)
+        {
+            puts("No hay micros en esa empresa");
+
+        }
+        ok = 1;
+    }
+    return ok;
+}
+int ShowBusesCompanies(sBus buses[], int size, sKind types[], int kindSize, sCompany companies[], int companySize,
+                         sDriver drivers[], int driverSize){
+    int ok = 0;
+    int companyId;
+
+    if (buses != NULL && size > 0 && companies != NULL && companySize > 0 && types != NULL && kindSize > 0 && drivers != NULL && driverSize > 0){
+
+        system("cls");
+        puts("      ***Informes empresa de micros  ***");
+        showCompany(companies,companySize);
+        printf("Ingrese id de la empresa del micro: ");
+        scanf("%d", &companyId);
+
+        while(!validateCompanyId(companies,companyId,companySize)){
+            printf("Error, ingrese id de Empresa de micro valido: ");
+            scanf("%d", &companyId);
+        }
+        showBusIdCompany(companyId,buses,size,types,kindSize,companies,companySize,drivers,driverSize);
+
+        ok = 1;
+    }
+    return ok;
+
+}
+int showBusIdKind(int kindId, sBus buses[], int size, sKind types[], int kindSize, sCompany companies[], int companySize, sDriver drivers[], int driversSize){
+
+    int ok = 0;
+    int flag = 1;
+
+
+    if (buses != NULL && size > 0 && types !=NULL && companySize > 0)
+    {
+
+
+        while ( !validateKindId(types,kindId,kindSize)){
+            printf("Error, ingrese id del tipo de micro: ");
+            scanf("%d", &kindId);
+        }
+
+
+        printf("------------------------------------------------------------\n");
+        printf(" ID       Empresa       Tipo    Pasajeros      Chofer\n");
+        printf("------------------------------------------------------------\n");
+        for (int i = 0; i < size; i++){
+            if (!buses[i].isEmpty && buses[i].idKind == kindId)
+            {
+                showBus(buses[i],types,kindSize,companies,companySize,drivers,driversSize);
+                flag = 0;
+            }
+        }
+        if (flag)
+        {
+            puts("No hay micros de este tipo");
+        }
+        ok = 1;
+    }
+    return ok;
+}
+int ShowBusesTypes(sBus buses[], int size, sKind types[], int kindSize, sCompany companies[], int companySize,
+                         sDriver drivers[], int driverSize){
+    int ok = 0;
+    int kindId;
+
+    if (buses != NULL && size > 0 && companies != NULL && companySize > 0 && types != NULL && kindSize > 0 && drivers != NULL && driverSize > 0){
+
+        system("cls");
+        puts("     ***Informes empresa de micros  ***");
+        showKind(types,kindSize);
+        printf("Ingrese id del tipo de micro: ");
+        scanf("%d", &kindId);
+
+        while(!validateKindId(types,kindId,kindSize)){
+            printf("Error, Ingrese id del tipo de micro: ");
+            scanf("%d", &kindId);
+        }
+        showBusIdKind(kindId,buses,size,types,kindSize,companies,companySize,drivers,driverSize);
+
+        ok = 1;
+    }
+    return ok;
+
+}
+int showpercentageBusesVip(sBus buses[], int size, sCompany companies[], int companySize, sKind types[], int kindSize){
+
+    int ok = 0;
+    int companyId;
+    char companyDescription[20];
+    int flag = 1;
+    int allCont = 0;
+    int vipCont = 0;
+    float vipPorc = 0;
+
+    if (buses != NULL && size > 0 && companies != NULL && companySize > 0 && types != NULL && kindSize > 0 ){
+        system("cls");
+        puts("               INFORME MICROS VIP ");
+        puts("------------------------------------------------------------");
+
+        showCompany(companies, companySize);
+
+        puts("Ingrese id de la empresa del micro: ");
+        scanf("%d", &companyId);
+
+        while(!validateCompanyId(companies,companyId,companySize)){
+            puts("Error, Ingrese id de la empresa del micro: ");
+            scanf("%d", &companyId);
+        }
+
+        loadCompanyDescription(companies,companySize,companyId,companyDescription);
+
+        for (int i=0; i < size; i++)
+        {
+            if (!buses[i].isEmpty && buses[i].idCompany == companyId){
+                allCont++;
+                if ( buses[i].idKind == 5003){
+                    vipCont++;
+                }
+                flag = 0;
+            }
+        }
+        if (flag)
+        {
+            puts("No hay micros VIP!.\n");
+
+        }
+        else
+        {
+
+            printf("En la empresa %s hay %d micros tipo VIP.\n", companyDescription, vipCont);
+            vipPorc = (float) vipCont / allCont * 100;
+            printf("el porcentaje de VIP sobre todos los tipos de micros es: %.2f \n", vipPorc);
+            puts("\n");
+        }
+        ok = 1;
+    }
+    return ok;
+}
+int ShowBusesForCompany(sBus buses[], int size, sCompany companies[], int companySize, sKind types[], int kindSize, sDriver drivers[], int driverSize){
+
+    int ok = 0;
+
+    if (buses != NULL && size > 0 && companies != NULL && companySize > 0 && types != NULL && kindSize > 0){
+        system("cls");
+        puts("               ***  INFORMES DE MICROS POR EMPRESA  ***");
+        puts("------------------------------------------------------------");
+
+        for (int i=0; i < companySize; i++){
+
+            printf("Empresa: %s\n", companies[i].description);
+            showBusIdCompany(buses[i].idCompany,buses,size,types,kindSize,companies,companySize,drivers,driverSize);
+            puts("------------------------------------------------------------\n");
+        }
+
+        ok = 1;
+    }
     return ok;
 }
 char validateChar(char value, char a, char b){

@@ -2,6 +2,16 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+	<File name="dataWarehouse.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="39" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="company.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="kind.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="322" topLine="0" />
@@ -12,14 +22,41 @@
 			<Collapse line="44" />
 		</Folding>
 	</File>
-	<File name="main.c" open="1" top="1" tabpos="7" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+	<File name="travel.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="333" topLine="97" />
+			<Cursor1 position="80" topLine="5" />
 		</Cursor>
 	</File>
-	<File name="dataWarehouse.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="destiny.c" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="39" topLine="0" />
+			<Cursor1 position="1487" topLine="58" />
+		</Cursor>
+	</File>
+	<File name="company.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="433" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="travel.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="943" topLine="2" />
+		</Cursor>
+		<Folding>
+			<Collapse line="15" />
+			<Collapse line="27" />
+			<Collapse line="39" />
+			<Collapse line="109" />
+			<Collapse line="122" />
+		</Folding>
+	</File>
+	<File name="kind.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="330" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="dataWarehouse.c" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1958" topLine="24" />
 		</Cursor>
 	</File>
 	<File name="destiny.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -27,84 +64,46 @@
 			<Cursor1 position="431" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="kind.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="buses.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="330" topLine="0" />
+			<Cursor1 position="1714" topLine="16" />
 		</Cursor>
 	</File>
-	<File name="buses.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="buses.c" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="5158" topLine="0" />
+			<Cursor1 position="1239" topLine="0" />
 		</Cursor>
 		<Folding>
-			<Collapse line="8" />
-			<Collapse line="30" />
-			<Collapse line="43" />
-			<Collapse line="56" />
-			<Collapse line="121" />
-			<Collapse line="140" />
-			<Collapse line="169" />
+			<Collapse line="9" />
+			<Collapse line="33" />
+			<Collapse line="46" />
+			<Collapse line="59" />
+			<Collapse line="134" />
+			<Collapse line="155" />
 			<Collapse line="183" />
-			<Collapse line="198" />
-			<Collapse line="276" />
-			<Collapse line="317" />
-			<Collapse line="345" />
-			<Collapse line="348" />
+			<Collapse line="197" />
+			<Collapse line="213" />
+			<Collapse line="300" />
+			<Collapse line="342" />
+			<Collapse line="370" />
+			<Collapse line="389" />
+			<Collapse line="424" />
+			<Collapse line="448" />
+			<Collapse line="482" />
+			<Collapse line="506" />
+			<Collapse line="560" />
+			<Collapse line="580" />
+			<Collapse line="583" />
 		</Folding>
-	</File>
-	<File name="buses.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1015" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="travel.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="663" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="dataWarehouse.c" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1290" topLine="8" />
-		</Cursor>
 	</File>
 	<File name="date.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="122" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="destiny.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1776" topLine="0" />
+			<Cursor1 position="4598" topLine="138" />
 		</Cursor>
-		<Folding>
-			<Collapse line="7" />
-			<Collapse line="25" />
-			<Collapse line="40" />
-			<Collapse line="59" />
-		</Folding>
-	</File>
-	<File name="company.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="130" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="travel.c" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3132" topLine="33" />
-		</Cursor>
-		<Folding>
-			<Collapse line="15" />
-			<Collapse line="27" />
-		</Folding>
-	</File>
-	<File name="company.c" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1100" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="5" />
-			<Collapse line="25" />
-			<Collapse line="43" />
-		</Folding>
 	</File>
 </CodeBlocks_layout_file>
